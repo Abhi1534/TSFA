@@ -1,0 +1,371 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="TSFA.master.cs" Inherits="TSFA.TSFA" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head runat="server">
+    <title>::TSFA::</title>
+    <meta name="title" content="Academy, Forest Academy, Dulapally" />
+    <meta name="Keywords" content="Academy, Forest Academy, Dulapally, Trainings" />
+    <meta name="Content" content="Academy, Forest Academy, Dulapally" />
+    <meta name="description" content="Academy, Forest Academy, Dulapally" />
+
+    <!-- Mobile Specific Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0;user-scalable=no" />
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="css/plugins.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="css/switcher.css" rel="stylesheet" />
+    <link rel="stylesheet" href="search/search.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <%--<link rel="stylesheet" href="css/font-awesome.min.css">--%>
+    <link href="css/styles-7.css" rel="stylesheet" id="colors">
+    <link href="css/pure-js-lightbox.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/pure-js-lightbox.js"></script>
+    <script type="text/javascript" src="https://use.fontawesome.com/49b98aaeb5.js"></script>
+
+    <style type="text/css">
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            #myImg:hover {
+                opacity: 0.7;
+            }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 78888888; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: none; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content, #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0);
+            }
+
+            to {
+                -webkit-transform: scale(1);
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
+        .publication-hm-page {
+            text-align: center;
+            background-color: #9eac97;
+            padding: 15px;
+            border: 2px solid #788e6d;
+        }
+    </style>
+
+    <link id="avast_os_ext_custom_font" href="chrome-extension://eofcbnmajmjmplflapaojjnihcjkigck/common/ui/fonts/fonts.css" rel="stylesheet" type="text/css">
+    <div class="bg">
+        <div class="container">
+            <div class="row">
+                <%--Header Strip Content--%>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
+                    <div class="ne2">
+                        <ul>
+                            <li><a href="javascript:ts('body',1)">
+                                <img title="Increase Font size" src="img/icon_fontSizeUp.gif" width="20" height="20" border="0"></a></li>
+                            <li><a href="javascript:ts('body',-2)">
+                                <img title="Increase Font size" src="img/icon_fontSizeDown.gif" width="20" height="20" border="0"></a></li>
+                        </ul>
+                         <ul>
+                            &nbsp;&nbsp;&nbsp
+                            <li><a href="Admin/Login.aspx" style="font-size: 15px;" class="">Login </a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="main-wrapper">
+        <header class="header-style4">
+<div class="navbar-default">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-12 col-lg-12">
+<div class="navbar-header navbar-header-custom row">
+<div class="col-xl-12 col-lg-12">
+<a href="Index.aspx" class="logo7"> <img id="logo" src="images/logo/Logoabc.png" alt=" Telangana Forest Academy, Dulapally"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="navigation">
+<div class="menu_area alt-font">
+
+<div >
+<nav class="navbar navbar-expand-lg navbar-light no-padding">
+<div class="navbar-toggler"></div>
+<ul class="navbar-nav" id="nav" style="">
+   <li><a href="Index.aspx" class=""> Home </a></li>
+     <%--  <li><a href="ContactMaster.aspx" class=""> Contact Us </a></li>
+        <li><a href="Admin/Login.aspx" class=""> Login </a></li>--%>
+    
+ <%--   <li class="has-sub"><span class="submenu-button"></span>
+<a target="_self" href="#"> Administration  </a>
+<ul>
+    <asp:Repeater ID="rp_Administrationmenuitems" runat="server">
+    <itemtemplate>
+<li>
+    <a href="Administratorview.aspx?MemberTypeID=<%# Eval("AdministrationTypeID")%>" target="_self"> <asp:Label text='<%# Eval("AdministrationTypeName")%>'  runat="server" /></a>
+
+</li>
+        </itemtemplate>
+</asp:Repeater>
+</ul> 
+</li>--%>
+   
+     
+   
+   
+     
+        <asp:panel runat="server" class="navbar-nav" ID="pnl_menuview">
+        
+    </asp:panel>
+  
+
+<%--<li><a href="Index.aspx" class=""> Home </a></li>
+<li><a href="AboutUs.aspx" class=""> About Us </a></li>
+
+
+<li class="has-sub"><span class="submenu-button"></span><a target="_self" href="#"> Training </a>
+<ul>
+<li class="has-sub"><span class="submenu-button"></span><a href="InductionTraining.aspx">Induction Training</a>
+<ul>
+<li><a href="FROGOI.aspx" target="_self">FRO (GOI Sponsered)</a></li>
+<li><a href="FSO.aspx" target="_self">FSO (Direct/Convertee)</a></li>
+<li><a href="FBOT.aspx" target="_self">FBO (Direct)</a></li>
+<li><a href="FSOP.aspx" target="_self">FSO (Promotee)</a></li>
+</ul>
+</li>
+<li><a href="#" target="_self">Workshops/Seminars</a></li>
+<li><a href="TrainingCalendar.aspx" target="_self">Training Calendar </a>
+</li><li><a href="CAFE.aspx" target="_blank">Cafe</a>
+</li>	
+</ul> 
+</li>
+
+<li class="has-sub"><span class="submenu-button"></span><a target="_self" href=> Training Resources  </a>
+<ul>
+<li><a href="TraininigRules.aspx" target="_self">Training Rules</a></li>
+<li><a href="Training_Materials.aspx" target="_self">Training Materials</a></li>
+<li><a href="Books_Journals.aspx" target="_self">Books /Journals</a></li>	
+<li><a href="Faculty.aspx" target="_self">Guest Faculty</a></li>	
+</ul> 
+</li>
+
+<li class="has-sub"><span class="submenu-button"></span><a target="_self" href="#"> Gallery  </a>
+<ul>
+<li><a href="#" target="_self">Photo Gallery </a></li>
+<li><a href="#" target="_self">Video Gallery </a></li>	
+</ul> 
+</li>
+<li><a href="Library.aspx" class=""> Library</a></li>
+<li><a href="CEFNARM.aspx" class=""> CEFNARM </a></li>
+<li><a href="Contactus.aspx" class=""> Contact Us </a></li>
+<li><a href="Admin/Login.aspx" class=""> Login </a></li>--%>
+<%--<li><a href="MarksEntry.aspx" class="">Marks Entry</a></li>
+<li><a href="TrainingReg.aspx" class="">Training Registrations</a></li>--%></ul>
+     
+</nav>
+</div>
+  
+</div>
+</div>
+</div>
+</header>
+
+
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+            <footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-4 sm-margin-30px-bottom">
+<h3 class="text-white">:.Quick Links.:</h3>
+<div class="row">
+<div class="col-md-12 no-padding-right xs-padding-15px-right">
+<ul class="footer-list xs-margin-5px-bottom">
+<li><a href="#" target="_blank"> TSFA Login</a></li>
+<li><a href="#" target=""> Related Links</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="col-lg-4 col-md-4 sm-margin-30px-bottom">
+<h3 class="text-white">:.Follow Us.:</h3>
+<div class="row">
+<div class="col-md-12 no-padding-right xs-padding-15px-right">
+<div class="footer-social-icons">
+<ul class="ul_section">
+<li><a href="#" target="_blank"><i class="fa fa-envelope-o" aria-hidden="true"></i> </a></li>  
+<li><a href="#" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li> 
+<li><a href="#" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i> </a></li>  
+<li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>       
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+<div class="col-lg-4 col-md-4 sm-margin-30px-bottom"><br><br>
+<div align="center"><h4 style="color: White">No of Visits:
+<img src="http://simplehitcounter.com/hit.php?uid=2278419&amp;f=16711680&amp;b=16777215" border="0" height="18" width="83" alt="web counter"><br></h4></div>              
+</div>
+</div>
+</div>
+
+<div class="footer-bar">
+<div class="container">
+<div class="row">
+
+<div class="col-md-6 text-left xs-text-center xs-margin-5px-bottom">
+<div class="footer-social-icons ">
+<p class="xs-margin-5px-top xs-font-size13">© Copyright TSFA 2023. All Rights Reserved.</p>
+</div>
+</div>
+<div class="col-md-6 text-right xs-text-right">
+<p class="xs-margin-5px-top xs-font-size13"> Designed and Developed by <a href="#" target="_blank" style="color:#fff;">GVR INFOSYSTEMS PVT LTD</a></p>
+</div>
+
+</div>
+</div>
+</div>
+</footer>
+
+            <a href="javascript:void(0)" class="scroll-to-top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/core.min.js"></script>
+            <script src="search/search.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/textsizer.js"></script>
+            <script src="js/mailform/jquery.form.min.js"></script>
+            <script src="js/mailform/jquery.rd-mailform.min.c.js"></script>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <span class="close">×</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+
+            <script type="text/javascript">
+
+                $(".modelImage").on("click", function () {
+                    var imgsrc = $(this).attr("data-src");
+                    // Get the modal
+                    var modal = $(document).find(".modal");
+                    var targetModal = $(document).find(".modal-content");
+
+                    // Get the image and insert it inside the modal - use its "alt" text as a caption
+                    var img = $(this);
+                    console.log("Model Clicked");
+                    var captionText = document.getElementById("caption");
+
+                    modal.css("display", "block");
+                    targetModal.attr("src", imgsrc);
+
+
+                });
+
+                $(".close").on("click", function () {
+                    var modal = document.getElementById("myModal");
+                    modal.style.display = "none";
+                });
+
+            </script>
+
+        </form>
+</body>
+</html>

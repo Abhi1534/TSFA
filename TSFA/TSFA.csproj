@@ -1,0 +1,1308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A28943A2-95A2-4B30-8CF8-825DAFB2BEF8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TSFA</RootNamespace>
+    <AssemblyName>TSFA</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\nikitham\Desktop\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administratorview.aspx" />
+    <Content Include="AdminstratiomMemberView.aspx" />
+    <Content Include="Admin\AdministartionMembers.aspx" />
+    <Content Include="Admin\CategoryType.aspx" />
+    <Content Include="Admin\FacilityMaster.aspx" />
+    <Content Include="Admin\MenuPreview.aspx" />
+    <Content Include="Admin\MessageMaster.aspx" />
+    <Content Include="Admin\PageDetails.aspx" />
+    <Content Include="ContactMaster.aspx" />
+    <Content Include="EventImagesView.aspx" />
+    <Content Include="FacilityView.aspx" />
+    <Content Include="Facilityviews.aspx" />
+    <Content Include="Menuview.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\css\bootstrap.min.css.map" />
+    <Content Include="assets\fonts\feathericon.eot" />
+    <Content Include="assets\fonts\feathericon.ttf" />
+    <Content Include="assets\fonts\feathericon.woff" />
+    <Content Include="assets\fonts\feathericon.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="assets\js\bootstrap.js.map" />
+    <Content Include="assets\js\bootstrap.min.js.map" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="assets\plugins\summernote\dist\font\summernote.eot" />
+    <Content Include="assets\plugins\summernote\dist\font\summernote.ttf" />
+    <Content Include="assets\plugins\summernote\dist\font\summernote.woff" />
+    <Content Include="CEFNARM\12032019EFST_MS9-NEW go %28CEFNARM%29.PDF" />
+    <Content Include="CEFNARM\12032019EFST_MS9-NEW go.PDF" />
+    <Content Include="CEFNARM\CEFNARM RATES 2020-21.pdf" />
+    <Content Include="CEFNARM\cefnarm.pdf" />
+    <Content Include="CEFNARM\CEFNARM_Bye_laws-go 2008.pdf" />
+    <Content Include="CEFNARM\CEFNARM_Bye_laws.pdf" />
+    <Content Include="CEFNARM\CIRCULAR NO.2-academy _trainings.PDF" />
+    <Content Include="CEFNARM\GB Meeting_trainings through CEFNARM.PDF" />
+    <Content Include="Documents\1st Fortnight - December, 2020 Training - Calender.docx" />
+    <Content Include="Documents\1st Fortnight - November 2020 Training - Calender.docx" />
+    <Content Include="Documents\2nd Fortnight - December  2020 Training - Calender.docx" />
+    <Content Include="Documents\2nd Fortnight - November 2020 Training - Calender.docx" />
+    <Content Include="Documents\Books_Journals\Feathered_Friends_of_Forest_Academy_Dulapally_Hyd_190215.pdf" />
+    <Content Include="Documents\Books_Journals\Forest Academy Nursery_Karadeepika Book Final.pdf" />
+    <Content Include="Documents\Books_Journals\Initiatives and Innovations By Telangana State Forest Department 2019.pdf" />
+    <Content Include="Documents\Books_Journals\Library Books New List %40 TSFA 2020.pdf" />
+    <Content Include="Documents\Books_Journals\NL workshop gender staff book.pdf" />
+    <Content Include="Documents\Books_Journals\Trees of Forest Academy by FRO Trainees %285th batch%29 Final %2810-08-18%29.pdf" />
+    <Content Include="Documents\cefnarm Broucher.pdf" />
+    <Content Include="Documents\FBo_Trainee List\10th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\11th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\12th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\13th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\14th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\15th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\16th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\17th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\18th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\19th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\20th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\21th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\22th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\23-24 Batch FBOs List %282017-18%29.pdf" />
+    <Content Include="Documents\FBo_Trainee List\25-26 Batch FBOs List %282018-19%29.pdf" />
+    <Content Include="Documents\FBo_Trainee List\27-28 Batch FBOs List %282019-20%29.pdf" />
+    <Content Include="Documents\FBo_Trainee List\3rd Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\4th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\5th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\6th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\7th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\8th Batch_FBO.pdf" />
+    <Content Include="Documents\FBo_Trainee List\9th Batch_FBO.pdf" />
+    <Content Include="Documents\FRO_Trainee List\1st Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\2nd Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\3rd Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\4th Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\5th Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\6th Batch FRO Trainees.pdf" />
+    <Content Include="Documents\FRO_Trainee List\7th Btach FRO trainees List.pdf" />
+    <Content Include="Documents\FSOP_Trainee List\1st Batch_FSO P List.pdf" />
+    <Content Include="Documents\FSOP_Trainee List\2nd Batch_FSO P List.pdf" />
+    <Content Include="Documents\FSOP_Trainee List\3rd Batch_FSO P List.pdf" />
+    <Content Include="Documents\FSO_Trainee List\06th Batch FSOs List %282005-06%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\07th Batch FSOs List %282006-07%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\08th Batch FSOs List %282007-08%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\09th Batch FSOs List %282008-09%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\10th Batch FSOs List %282009-10%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\11th Batch FSOs List %282010-11%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\12th Batch FSOs List %282011-12%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\13th Batch FSOs List %282012-13%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\14th Batch FSOs List %282013-14%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\15th Batch FSOs List %282014-15%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\16th Batch FSOs List %282015-16%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\17th Batch FSOs List %282016-17%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\18th Batch FSOs List %282018-19%29.pdf" />
+    <Content Include="Documents\FSO_Trainee List\19th Batch FSOs List %282019-20%29.pdf" />
+    <Content Include="Documents\List of FSOs 3months.docx" />
+    <Content Include="Documents\Species_on_Quarry_Site_Reclamation_Herbal_Garden_Final_240616_final.pdf" />
+    <Content Include="Documents\Training Master Data\TSFA_TRAINING MASTER DATA 2020 - 2021 as on 15.12.2020.xlsx" />
+    <Content Include="Documents\Training Materials\Forest Botany Notes-converted.pdf" />
+    <Content Include="Documents\Training Materials\Forest Management-Working Plan.pdf" />
+    <Content Include="Documents\Training Materials\Forest Protection.pdf" />
+    <Content Include="Documents\Training Materials\Geology Notes.pdf" />
+    <Content Include="Documents\Training Materials\IT-FSO-TSFA.pdf" />
+    <Content Include="Documents\Training Materials\Research Notes.pdf" />
+    <Content Include="Documents\Training Materials\Social Forestry Notes.pdf" />
+    <Content Include="Documents\Training Materials\Utilization notes-.pdf" />
+    <Content Include="Documents\Training Rules\FROS_DFE RULES\2.fro-syllabus.pdf" />
+    <Content Include="Documents\Training Rules\FROS_DFE RULES\3. trg_guide.pdf" />
+    <Content Include="Documents\Training Rules\FROS_DFE RULES\3.Office Order for Revision of Tution fee and Stipend for FRO Trainees.pdf" />
+    <Content Include="Documents\Training Rules\FROS_DFE RULES\Important Insructions of FRO Trainees.pdf" />
+    <Content Include="Documents\Training Rules\State Training\2016EFST_MS40.PDF" />
+    <Content Include="Documents\Training Rules\State Training\Exemption for trainings_circular_pccf.PDF" />
+    <Content Include="Documents\Training Rules\State Training\FSO P.SYLLABUS 3RD BATCH.pdf" />
+    <Content Include="Documents\Training Rules\State Training\Go Ma No.76 Training Rules.pdf" />
+    <Content Include="Documents\TSFA_Orders_Circulars\2015EFST_MS12_TSFA_.PDF" />
+    <Content Include="Documents\TSFA_Orders_Circulars\apfa renmed as TSFA by pccf.pdf" />
+    <Content Include="Documents\TSFA_Orders_Circulars\TSFA_ POSTS WITH DETAILS.pdf" />
+    <Content Include="Images\news\attachment-2799085-upper-division-clerk-hindi-26-05-2020.pdf" />
+    <Content Include="Images\news\attachment-4108140-corrigendum-online-management-module-16720.pdf" />
+    <Content Include="Images\news\attachment-4295406-woodwords.pdf" />
+    <Content Include="Images\news\attachment-5448403-online-management-module-new-14720.pdf" />
+    <Content Include="Images\news\attachment-5588895-revised-rfp-for-online-management-module-of-mct-7820.pdf" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Sharepath\LatestNews\coco.jpg" />
+    <Content Include="Sharepath\LatestNews\fine_picture_of_a_blue_light_bulb_2_165321.jpg" />
+    <Content Include="Sharepath\LatestNews\qr4-268x300.png" />
+    <Content Include="Sharepath\LatestNews\Screenshot %28199%29.png" />
+    <Content Include="Sharepath\LatestNews\Screenshot %28200%29.png" />
+    <Content Include="Sharepath\LatestNews\Screenshot %28205%29.png" />
+    <Content Include="Sharepath\LatestNews\Screenshot %28206%29.png" />
+    <Content Include="Sharepath\TSFA\6db00f6b-3bca-46a8-ba08-33e564ab03b6.mp4" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-04\SPFA1866.jpg" />
+    <Content Include="Sharepath\TSFA\Screenshot %28199%29.png" />
+    <Content Include="TSFA.Master" />
+    <Content Include="programs\CEFNARM\12032019EFST_MS9-NEW go %28CEFNARM%29.PDF" />
+    <Content Include="programs\CEFNARM\12032019EFST_MS9-NEW go.PDF" />
+    <Content Include="programs\CEFNARM\CEFNARM RATES 2020-21.pdf" />
+    <Content Include="programs\CEFNARM\cefnarm.pdf" />
+    <Content Include="programs\CEFNARM\CEFNARM_Bye_laws-go 2008.pdf" />
+    <Content Include="programs\CEFNARM\CEFNARM_Bye_laws.pdf" />
+    <Content Include="programs\CEFNARM\CIRCULAR NO.2-academy _trainings.PDF" />
+    <Content Include="programs\CEFNARM\GB Meeting_trainings through CEFNARM.PDF" />
+    <Content Include="programs\Documents\1st Fortnight - December, 2020 Training - Calender.docx" />
+    <Content Include="programs\Documents\1st Fortnight - November 2020 Training - Calender.docx" />
+    <Content Include="programs\Documents\2nd Fortnight - December  2020 Training - Calender.docx" />
+    <Content Include="programs\Documents\2nd Fortnight - November 2020 Training - Calender.docx" />
+    <Content Include="programs\Documents\cefnarm Broucher.pdf" />
+    <Content Include="programs\Documents\List of FSOs 3months.docx" />
+    <Content Include="programs\Documents\Species_on_Quarry_Site_Reclamation_Herbal_Garden_Final_240616_final.pdf" />
+    <Content Include="programs\news\attachment-2799085-upper-division-clerk-hindi-26-05-2020.pdf" />
+    <Content Include="programs\news\attachment-4108140-corrigendum-online-management-module-16720.pdf" />
+    <Content Include="programs\news\attachment-4295406-woodwords.pdf" />
+    <Content Include="programs\news\attachment-5448403-online-management-module-new-14720.pdf" />
+    <Content Include="programs\news\attachment-5588895-revised-rfp-for-online-management-module-of-mct-7820.pdf" />
+    <Content Include="programs\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Sharepath\TSFA\Exemption for trainings_circular_pccf.PDF" />
+    <Content Include="Sharepath\TSFA\Go Ma No.76 Training Rules.pdf" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-04\Resume Ramya %281%29.docx" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-05\4.pdf" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-05\Invoice.pdf" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-05\Resume Ramya %281%29 %281%29.docx" />
+    <Content Include="Sharepath\TSFA\LatestNewsDocument\2023-07-12\2nd Fortnight - December  2020 Training - Calender %281%29.docx" />
+    <Content Include="Whoswho.aspx" />
+    <None Include="Properties\PublishProfiles\Tsfa.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="Admin\AdministrationTypes.aspx" />
+    <Content Include="Admin\LatestNewsMaster.aspx" />
+    <Content Include="AD_FRO.aspx" />
+    <Content Include="Anjaneyulu.aspx" />
+    <Content Include="Anjaneyulu.htm" />
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\feathericon.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\select2.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\feathericon.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\MaterialIcons-Regular.svg" />
+    <Content Include="assets\img\blog\blog-01.jpg" />
+    <Content Include="assets\img\blog\blog-02.jpg" />
+    <Content Include="assets\img\blog\blog-03.jpg" />
+    <Content Include="assets\img\blog\blog-04.jpg" />
+    <Content Include="assets\img\blog\blog-05.jpg" />
+    <Content Include="assets\img\blog\blog-06.jpg" />
+    <Content Include="assets\img\blog\blog-07.jpg" />
+    <Content Include="assets\img\blog\blog-08.jpg" />
+    <Content Include="assets\img\blog\blog-09.jpg" />
+    <Content Include="assets\img\blog\blog-10.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-01.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-02.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-03.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-04.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-05.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-06.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-07.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-08.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-09.jpg" />
+    <Content Include="assets\img\blog\blog-thumb-10.jpg" />
+    <Content Include="assets\img\doctors\doctor-01.jpg" />
+    <Content Include="assets\img\doctors\doctor-02.jpg" />
+    <Content Include="assets\img\doctors\doctor-03.jpg" />
+    <Content Include="assets\img\doctors\doctor-04.jpg" />
+    <Content Include="assets\img\doctors\doctor-05.jpg" />
+    <Content Include="assets\img\doctors\doctor-06.jpg" />
+    <Content Include="assets\img\doctors\doctor-07.jpg" />
+    <Content Include="assets\img\doctors\doctor-08.jpg" />
+    <Content Include="assets\img\doctors\doctor-09.jpg" />
+    <Content Include="assets\img\doctors\doctor-10.jpg" />
+    <Content Include="assets\img\doctors\doctor-11.jpg" />
+    <Content Include="assets\img\doctors\doctor-12.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-01.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-02.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-03.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-04.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-05.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-06.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-07.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-08.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-09.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-10.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-11.jpg" />
+    <Content Include="assets\img\doctors\doctor-thumb-12.jpg" />
+    <Content Include="assets\img\features\feature-01.jpg" />
+    <Content Include="assets\img\features\feature-02.jpg" />
+    <Content Include="assets\img\features\feature-03.jpg" />
+    <Content Include="assets\img\features\feature-04.jpg" />
+    <Content Include="assets\img\features\feature-05.jpg" />
+    <Content Include="assets\img\features\feature-06.jpg" />
+    <Content Include="assets\img\features\feature.png" />
+    <Content Include="assets\img\img-01.jpg" />
+    <Content Include="assets\img\logo-white.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\patients\patient.jpg" />
+    <Content Include="assets\img\patients\patient1.jpg" />
+    <Content Include="assets\img\patients\patient10.jpg" />
+    <Content Include="assets\img\patients\patient11.jpg" />
+    <Content Include="assets\img\patients\patient12.jpg" />
+    <Content Include="assets\img\patients\patient13.jpg" />
+    <Content Include="assets\img\patients\patient14.jpg" />
+    <Content Include="assets\img\patients\patient15.jpg" />
+    <Content Include="assets\img\patients\patient2.jpg" />
+    <Content Include="assets\img\patients\patient3.jpg" />
+    <Content Include="assets\img\patients\patient4.jpg" />
+    <Content Include="assets\img\patients\patient5.jpg" />
+    <Content Include="assets\img\patients\patient6.jpg" />
+    <Content Include="assets\img\patients\patient7.jpg" />
+    <Content Include="assets\img\patients\patient8.jpg" />
+    <Content Include="assets\img\patients\patient9.jpg" />
+    <Content Include="assets\img\product\product.jpg" />
+    <Content Include="assets\img\product\product1.jpg" />
+    <Content Include="assets\img\product\product10.jpg" />
+    <Content Include="assets\img\product\product11.jpg" />
+    <Content Include="assets\img\product\product12.jpg" />
+    <Content Include="assets\img\product\product13.jpg" />
+    <Content Include="assets\img\product\product14.jpg" />
+    <Content Include="assets\img\product\product15.jpg" />
+    <Content Include="assets\img\product\product2.jpg" />
+    <Content Include="assets\img\product\product3.jpg" />
+    <Content Include="assets\img\product\product4.jpg" />
+    <Content Include="assets\img\product\product5.jpg" />
+    <Content Include="assets\img\product\product6.jpg" />
+    <Content Include="assets\img\product\product7.jpg" />
+    <Content Include="assets\img\product\product8.jpg" />
+    <Content Include="assets\img\product\product9.jpg" />
+    <Content Include="assets\img\profiles\avatar-01.jpg" />
+    <Content Include="assets\img\profiles\avatar-02.jpg" />
+    <Content Include="assets\img\profiles\avatar-03.jpg" />
+    <Content Include="assets\img\profiles\avatar-04.jpg" />
+    <Content Include="assets\img\profiles\avatar-05.jpg" />
+    <Content Include="assets\img\profiles\avatar-06.jpg" />
+    <Content Include="assets\img\profiles\avatar-07.jpg" />
+    <Content Include="assets\img\profiles\avatar-08.jpg" />
+    <Content Include="assets\img\profiles\avatar-09.jpg" />
+    <Content Include="assets\img\profiles\avatar-10.jpg" />
+    <Content Include="assets\img\profiles\avatar-11.jpg" />
+    <Content Include="assets\img\profiles\avatar-12.jpg" />
+    <Content Include="assets\img\profiles\avatar-13.jpg" />
+    <Content Include="assets\img\profiles\avatar-14.jpg" />
+    <Content Include="assets\img\profiles\avatar-15.jpg" />
+    <Content Include="assets\img\profiles\avatar-16.jpg" />
+    <Content Include="assets\img\profiles\avatar-17.jpg" />
+    <Content Include="assets\img\profiles\avatar-18.jpg" />
+    <Content Include="assets\img\profiles\avatar-19.jpg" />
+    <Content Include="assets\img\profiles\avatar-20.jpg" />
+    <Content Include="assets\img\specialities\specialities-01.png" />
+    <Content Include="assets\img\specialities\specialities-02.png" />
+    <Content Include="assets\img\specialities\specialities-03.png" />
+    <Content Include="assets\img\specialities\specialities-04.png" />
+    <Content Include="assets\img\specialities\specialities-05.png" />
+    <Content Include="assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chart.morris.js" />
+    <Content Include="assets\js\form-validation.js" />
+    <Content Include="assets\js\html5shiv.min.js" />
+    <Content Include="assets\js\jquery-3.2.1.min.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.inputmask.js" />
+    <Content Include="assets\js\jquery.maskedinput.min.js" />
+    <Content Include="assets\js\jvectormap.js" />
+    <Content Include="assets\js\mask.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\popper.min.js" />
+    <Content Include="assets\js\respond.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\select2.min.js" />
+    <Content Include="assets\plugins\datatables\datatables.css" />
+    <Content Include="assets\plugins\datatables\datatables.js" />
+    <Content Include="assets\plugins\datatables\datatables.min.css" />
+    <Content Include="assets\plugins\datatables\datatables.min.js" />
+    <Content Include="assets\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="assets\plugins\fontawesome\css\all.css" />
+    <Content Include="assets\plugins\fontawesome\css\all.min.css" />
+    <Content Include="assets\plugins\fontawesome\css\fontawesome.css" />
+    <Content Include="assets\plugins\fontawesome\css\fontawesome.min.css" />
+    <Content Include="assets\plugins\fontawesome\css\solid.css" />
+    <Content Include="assets\plugins\fontawesome\css\solid.min.css" />
+    <Content Include="assets\plugins\fontawesome\js\all.js" />
+    <Content Include="assets\plugins\fontawesome\js\all.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\brands.js" />
+    <Content Include="assets\plugins\fontawesome\js\brands.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\conflict-detection.js" />
+    <Content Include="assets\plugins\fontawesome\js\conflict-detection.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\fontawesome.js" />
+    <Content Include="assets\plugins\fontawesome\js\fontawesome.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\regular.js" />
+    <Content Include="assets\plugins\fontawesome\js\regular.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\solid.js" />
+    <Content Include="assets\plugins\fontawesome\js\solid.min.js" />
+    <Content Include="assets\plugins\fontawesome\js\v4-shims.js" />
+    <Content Include="assets\plugins\fontawesome\js\v4-shims.min.js" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\plugins\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="assets\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\plugins\fullcalendar\jquery.fullcalendar.js" />
+    <Content Include="assets\plugins\morris\morris.css" />
+    <Content Include="assets\plugins\morris\morris.min.js" />
+    <Content Include="assets\plugins\raphael\raphael.min.js" />
+    <Content Include="assets\plugins\slimscroll\jquery.slimscroll.js" />
+    <Content Include="assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ar-AR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-bg-BG.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ca-ES.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-cs-CZ.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-da-DK.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-de-DE.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-el-GR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-es-ES.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-es-EU.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-fa-IR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-fi-FI.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-fr-FR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-gl-ES.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-he-IL.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-hr-HR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-hu-HU.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-id-ID.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-it-IT.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ja-JP.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ko-KR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-lt-LT.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-lt-LV.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-mn-MN.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-nb-NO.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-nl-NL.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-pl-PL.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-pt-BR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-pt-PT.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ro-RO.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ru-RU.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-sk-SK.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-sl-SI.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-sr-RS.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-sv-SE.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-ta-IN.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-th-TH.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-tr-TR.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-uk-UA.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-uz-UZ.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-vi-VN.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-zh-CN.js" />
+    <Content Include="assets\plugins\summernote\dist\lang\summernote-zh-TW.js" />
+    <Content Include="assets\plugins\summernote\dist\plugin\databasic\summernote-ext-databasic.css" />
+    <Content Include="assets\plugins\summernote\dist\plugin\databasic\summernote-ext-databasic.js" />
+    <Content Include="assets\plugins\summernote\dist\plugin\hello\summernote-ext-hello.js" />
+    <Content Include="assets\plugins\summernote\dist\plugin\specialchars\summernote-ext-specialchars.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote-bs4.css" />
+    <Content Include="assets\plugins\summernote\dist\summernote-bs4.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote-bs4.min.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote-lite.css" />
+    <Content Include="assets\plugins\summernote\dist\summernote-lite.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote-lite.min.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote.css" />
+    <Content Include="assets\plugins\summernote\dist\summernote.js" />
+    <Content Include="assets\plugins\summernote\dist\summernote.min.js" />
+    <Content Include="Books_Journals.aspx" />
+    <Content Include="CAFE.aspx" />
+    <Content Include="CAFE\DSC_0511.JPG" />
+    <Content Include="CAFE\DSC_0513.JPG" />
+    <Content Include="CAFE\DSC_0515.JPG" />
+    <Content Include="CAFE\DSC_0519.JPG" />
+    <Content Include="CAFE\DSC_0524.JPG" />
+    <Content Include="CAFE\DSC_0531.JPG" />
+    <Content Include="CAFE\DSC_0536.JPG" />
+    <Content Include="CAFE\DSC_0539.JPG" />
+    <Content Include="CAFE\IMG_3765.JPG" />
+    <Content Include="CAFE\IMG_3811.JPG" />
+    <Content Include="CEFNARM.aspx" />
+    <Content Include="CEFNARM\Income_Tax_Exemption__CEFNARM.jpg" />
+    <Content Include="CEFNARM\SOCIETY RG.NO SCANED.jpg" />
+    <Content Include="CEFNARM_RATES.aspx" />
+    <Content Include="Contactus.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\plugins.css" />
+    <Content Include="css\plugins\animate.css" />
+    <Content Include="css\plugins\bootstrap.min.css" />
+    <Content Include="css\plugins\datepicker.css" />
+    <Content Include="css\plugins\default.css" />
+    <Content Include="css\plugins\et-line.css" />
+    <Content Include="css\plugins\fontawesome-all.min.css" />
+    <Content Include="css\plugins\icomoon.css" />
+    <Content Include="css\plugins\magnific-popup.css" />
+    <Content Include="css\plugins\mailform.css" />
+    <Content Include="css\plugins\nav-menu.css" />
+    <Content Include="css\plugins\owl.carousel.css" />
+    <Content Include="css\plugins\xzoom.css" />
+    <Content Include="css\pure-js-lightbox.css" />
+    <Content Include="css\styles-7.css" />
+    <Content Include="css\switcher.css" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="DDRamaMohan.aspx" />
+    <Content Include="DDVasantha.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Director.aspx" />
+    <Content Include="DirectorGeneral_CEFNARM.aspx" />
+    <Content Include="Documents\Books_Journals\20x30PosterHi_Feathered Friends of Forest Academy Campus.JPG" />
+    <Content Include="DyDirector.aspx" />
+    <Content Include="Faculty.aspx" />
+    <Content Include="FBOT.aspx" />
+    <Content Include="FROGOI.aspx" />
+    <Content Include="FSO.aspx" />
+    <Content Include="FSOP.aspx" />
+    <Content Include="Images\Add.svg" />
+    <Content Include="Images\addFeature.svg" />
+    <Content Include="Images\alumni-corners\image-14102-dr-praveen-jha.jpg" />
+    <Content Include="Images\alumni-corners\image-24249-nidhi-srivastava.jpg" />
+    <Content Include="Images\alumni-corners\image-29465-dr-p-viswakannan.jpg" />
+    <Content Include="Images\alumni-corners\image-34759-dr-s-senthil-kumar.jpg" />
+    <Content Include="Images\alumni-corners\image-38231-bharat-jyoti.jpg" />
+    <Content Include="Images\alumni-corners\image-38243-mukul-trivedi.jpg" />
+    <Content Include="Images\alumni-corners\image-38432-ganga-singh.jpg" />
+    <Content Include="Images\alumni-corners\image-41347-sp-anandh-kumar.jpg" />
+    <Content Include="Images\alumni-corners\image-42494-dr-b-balaji.jpg" />
+    <Content Include="Images\alumni-corners\image-53988-sk-awasthi.jpg" />
+    <Content Include="Images\apccf.jpg" />
+    <Content Include="Images\app-store-icon.png" />
+    <Content Include="Images\BackgroundImage.jpg" />
+    <Content Include="Images\banner\12821_interior-about-01.jpg" />
+    <Content Include="Images\banner\34630-min.png" />
+    <Content Include="Images\banner\9196-image-38231-bharat-jyoti.jpg" />
+    <Content Include="Images\book.svg" />
+    <Content Include="Images\camera.svg" />
+    <Content Include="Images\category\144_sanjay-singh-memorial1.jpg" />
+    <Content Include="Images\category\21_9-11-2019-1.jpg" />
+    <Content Include="Images\category\31_10-2-20-1.jpg" />
+    <Content Include="Images\category\433_30-year-11-02-2020-1.jpg" />
+    <Content Include="Images\category\567_wetland-day-2-02-20-3.jpg" />
+    <Content Include="Images\category\679_probationer4.jpg" />
+    <Content Include="Images\category\787_26-jan-20-2.jpg" />
+    <Content Include="Images\category\96_33psuc-07-02-2020-1.jpg" />
+    <Content Include="Images\cross.jpg" />
+    <Content Include="Images\Delete.svg" />
+    <Content Include="Images\edit-247.svg" />
+    <Content Include="Images\edit.svg" />
+    <Content Include="Images\Faculty\Anjaneyulu.jpg" />
+    <Content Include="Images\Faculty\PV Ramakrishna.jpg" />
+    <Content Include="Images\Faculty\RamaMohan.jpg" />
+    <Content Include="Images\Faculty\Vasantha.jpg" />
+    <Content Include="Images\info.svg" />
+    <Content Include="Images\issue.svg" />
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\Logoabc.png" />
+    <Content Include="Images\logo\lg_tsfa.png" />
+    <Content Include="Images\logo\Logo.png" />
+    <Content Include="Images\logo\Logoabc.png" />
+    <Content Include="Images\logo\Logonew.png" />
+    <Content Include="Images\logo\LogoOnly.png" />
+    <Content Include="Images\logo\logo_logo-dark.png" />
+    <Content Include="Images\new-flash.gif" />
+    <Content Include="Images\PCCFCAMPA.jpeg" />
+    <Content Include="Images\Political\Allola-Indrakaran-Reddy.jpg" />
+    <Content Include="Images\Political\ASanthiKumari.jpeg" />
+    <Content Include="Images\Political\PV Raja Rao.jpg" />
+    <Content Include="Images\Political\shoba.jpg" />
+    <Content Include="Images\Political\Sri-Kalvakuntla-Chandrashekar-Rao_jpg.jpg" />
+    <Content Include="Images\profile.svg" />
+    <Content Include="Images\Rajarao.jpeg" />
+    <Content Include="Images\Rajarao.png" />
+    <Content Include="Images\reg.svg" />
+    <Content Include="Images\return.svg" />
+    <Content Include="Images\right.svg" />
+    <Content Include="Images\save.svg" />
+    <Content Include="Images\status.svg" />
+    <Content Include="Images\view.svg" />
+    <Content Include="Images\visa.png" />
+    <Content Include="img\arrow2.png" />
+    <Content Include="img\content\feature-01.html" />
+    <Content Include="img\icon_fontSizeDown.gif" />
+    <Content Include="img\icon_fontSizeUp.gif" />
+    <Content Include="img\login.png" />
+    <Content Include="img\logos\logo-dark1.png" />
+    <Content Include="img\search.png" />
+    <Content Include="Img_Activities\Broucher.jpg" />
+    <Content Include="Img_Activities\DSC_0621.JPG" />
+    <Content Include="Img_Activities\DSC_1163.JPG" />
+    <Content Include="Img_Activities\DSC_1222.JPG" />
+    <Content Include="Img_Activities\DSC_1780.JPG" />
+    <Content Include="Img_Activities\DSC_3721.JPG" />
+    <Content Include="Img_Activities\IMG-20200530-WA0117.jpg" />
+    <Content Include="Img_Activities\TSFA_Video.jpg" />
+    <Content Include="Index.aspx" />
+    <Content Include="InductionTraining.aspx" />
+    <Content Include="Infrastru\ADMIN BUILDIN.jpg" />
+    <Content Include="Infrastru\AUDITORIUM.jpg" />
+    <Content Include="Infrastru\DINING HALL FROS.jpg" />
+    <Content Include="Infrastru\DORMITORY.jpg" />
+    <Content Include="Infrastru\EXECUTIVE HOSTEL.jpg" />
+    <Content Include="Infrastru\FROS HOSTEL--.JPG" />
+    <Content Include="Infrastru\GYM ROOM.jpg" />
+    <Content Include="Infrastru\LIBRARY.jpg" />
+    <Content Include="Infrastru\NEW HOSTEL-.jpg" />
+    <Content Include="Infrastru\TRAINING CENTRE.jpg" />
+    <Content Include="IP_Banner\ADMIN BUILDIN.jpg" />
+    <Content Include="IP_Banner\apccf.jpg" />
+    <Content Include="IP_Banner\AUDITORIUM.jpg" />
+    <Content Include="IP_Banner\FROS HOSTEL.JPG" />
+    <Content Include="IP_Banner\HERBAL GARDEN.jpg" />
+    <Content Include="IP_Banner\LIBRARY.jpg" />
+    <Content Include="IP_Banner\Organogram.png" />
+    <Content Include="IP_Banner\TRAINING CENTRE--.JPG" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\core.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\mailform\jquery.form.min.js" />
+    <Content Include="js\mailform\jquery.rd-mailform.min.c.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\pure-js-lightbox.js" />
+    <Content Include="js\textsizer.js" />
+    <Content Include="LatestNews.aspx" />
+    <Content Include="Library.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\MainMenuMaster.aspx" />
+    <Content Include="MarksEntry.aspx" />
+    <Content Include="Mslides\ADMIN BUILDIN.jpg" />
+    <Content Include="Mslides\AUDITORIUM.jpg" />
+    <Content Include="Mslides\CEFNARM.jpg" />
+    <Content Include="Mslides\DORMITORY.jpg" />
+    <Content Include="Mslides\DSC_2019.JPG" />
+    <Content Include="Mslides\DSC_2489.JPG" />
+    <Content Include="Mslides\DSC_2527.JPG" />
+    <Content Include="Mslides\EXECUTIVE HOSTEL.jpg" />
+    <Content Include="Mslides\Eye View.jpg" />
+    <Content Include="Mslides\FRO Hostel.JPG" />
+    <Content Include="Mslides\FROS HOSTEL--.JPG" />
+    <Content Include="Mslides\HERBAL GARDEN.jpg" />
+    <Content Include="Mslides\LIBRARY-.jpg" />
+    <Content Include="Mslides\Main Building.jpg" />
+    <Content Include="Mslides\New building.jpg" />
+    <Content Include="Mslides\NEW HOSTEL.jpg" />
+    <Content Include="Mslides\WeaponTraining.JPG" />
+    <Content Include="obj\Debug\TSFA.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TSFA.dll" />
+    <Content Include="obj\Debug\TSFA.pdb" />
+    <Content Include="Orders_Circulars.aspx" />
+    <Content Include="Organogram.aspx" />
+    <Content Include="programs\16330_icfre-logo-img.png" />
+    <Content Include="programs\17196_cza-logo.png" />
+    <Content Include="programs\19135_wii-logo.png" />
+    <Content Include="programs\19735-lbsnaa-logo-img.png" />
+    <Content Include="programs\20664-fsi-logo.png" />
+    <Content Include="programs\25964_terisas-logo.png" />
+    <Content Include="programs\27731-bsi-logo-img.png" />
+    <Content Include="programs\32468_persmin-logo.png" />
+    <Content Include="programs\34464_fao-logo-img.png" />
+    <Content Include="programs\35802_cifor-logo-img.png" />
+    <Content Include="programs\35901-ifs.png" />
+    <Content Include="programs\40154_svpnpa-logo.png" />
+    <Content Include="programs\40367_icimod-logo.png" />
+    <Content Include="programs\40852_finmin-logo.png" />
+    <Content Include="programs\42628_iifm-logo-img.png" />
+    <Content Include="programs\46399_kfri-logo.png" />
+    <Content Include="programs\6348_ipirti.-logo.png" />
+    <Content Include="programs\6632-moef-logo-img.png" />
+    <Content Include="programs\8404_iufro-logo.png" />
+    <Content Include="programs\alumni-corners\image-14102-dr-praveen-jha.jpg" />
+    <Content Include="programs\alumni-corners\image-24249-nidhi-srivastava.jpg" />
+    <Content Include="programs\alumni-corners\image-29465-dr-p-viswakannan.jpg" />
+    <Content Include="programs\alumni-corners\image-34759-dr-s-senthil-kumar.jpg" />
+    <Content Include="programs\alumni-corners\image-38231-bharat-jyoti.jpg" />
+    <Content Include="programs\alumni-corners\image-38243-mukul-trivedi.jpg" />
+    <Content Include="programs\alumni-corners\image-38432-ganga-singh.jpg" />
+    <Content Include="programs\alumni-corners\image-41347-sp-anandh-kumar.jpg" />
+    <Content Include="programs\alumni-corners\image-42494-dr-b-balaji.jpg" />
+    <Content Include="programs\alumni-corners\image-53988-sk-awasthi.jpg" />
+    <Content Include="programs\apccf.jpg" />
+    <Content Include="programs\app-store-icon.png" />
+    <Content Include="programs\banner\12821_interior-about-01.jpg" />
+    <Content Include="programs\banner\34630-min.png" />
+    <Content Include="programs\banner\9196-image-38231-bharat-jyoti.jpg" />
+    <Content Include="programs\CAFE\DSC_0511.JPG" />
+    <Content Include="programs\CAFE\DSC_0513.JPG" />
+    <Content Include="programs\CAFE\DSC_0515.JPG" />
+    <Content Include="programs\CAFE\DSC_0519.JPG" />
+    <Content Include="programs\CAFE\DSC_0524.JPG" />
+    <Content Include="programs\CAFE\DSC_0531.JPG" />
+    <Content Include="programs\CAFE\DSC_0536.JPG" />
+    <Content Include="programs\CAFE\DSC_0539.JPG" />
+    <Content Include="programs\CAFE\IMG_3765.JPG" />
+    <Content Include="programs\CAFE\IMG_3811.JPG" />
+    <Content Include="programs\category\144_sanjay-singh-memorial1.jpg" />
+    <Content Include="programs\category\21_9-11-2019-1.jpg" />
+    <Content Include="programs\category\31_10-2-20-1.jpg" />
+    <Content Include="programs\category\433_30-year-11-02-2020-1.jpg" />
+    <Content Include="programs\category\567_wetland-day-2-02-20-3.jpg" />
+    <Content Include="programs\category\679_probationer4.jpg" />
+    <Content Include="programs\category\787_26-jan-20-2.jpg" />
+    <Content Include="programs\category\96_33psuc-07-02-2020-1.jpg" />
+    <Content Include="programs\CEFNARM\Income_Tax_Exemption__CEFNARM.jpg" />
+    <Content Include="programs\CEFNARM\SOCIETY RG.NO SCANED.jpg" />
+    <Content Include="programs\css\bootstrap.min.css" />
+    <Content Include="programs\css\font-awesome.min.css" />
+    <Content Include="programs\css\plugins.css" />
+    <Content Include="programs\css\pure-js-lightbox.css" />
+    <Content Include="programs\css\styles-7.css" />
+    <Content Include="programs\css\switcher.css" />
+    <Content Include="programs\Faculty\Anjaneyulu.jpg" />
+    <Content Include="programs\Faculty\PV Ramakrishna.jpg" />
+    <Content Include="programs\Faculty\RamaMohan.jpg" />
+    <Content Include="programs\Faculty\Vasantha.jpg" />
+    <Content Include="programs\img\arrow2.png" />
+    <Content Include="programs\img\icon_fontSizeDown.gif" />
+    <Content Include="programs\img\icon_fontSizeUp.gif" />
+    <Content Include="programs\img\login.png" />
+    <Content Include="programs\img\search.png" />
+    <Content Include="programs\Img_Activities\Broucher.jpg" />
+    <Content Include="programs\Img_Activities\DSC_0621.JPG" />
+    <Content Include="programs\Img_Activities\DSC_1163.JPG" />
+    <Content Include="programs\Img_Activities\DSC_1222.JPG" />
+    <Content Include="programs\Img_Activities\DSC_1780.JPG" />
+    <Content Include="programs\Img_Activities\DSC_3721.JPG" />
+    <Content Include="programs\Img_Activities\IMG-20200530-WA0117.jpg" />
+    <Content Include="programs\Img_Activities\TSFA_Video.jpg" />
+    <Content Include="programs\Infrastru\ADMIN BUILDIN.jpg" />
+    <Content Include="programs\Infrastru\AUDITORIUM.jpg" />
+    <Content Include="programs\Infrastru\DINING HALL FROS.jpg" />
+    <Content Include="programs\Infrastru\DORMITORY.jpg" />
+    <Content Include="programs\Infrastru\EXECUTIVE HOSTEL.jpg" />
+    <Content Include="programs\Infrastru\FROS HOSTEL--.JPG" />
+    <Content Include="programs\Infrastru\GYM ROOM.jpg" />
+    <Content Include="programs\Infrastru\LIBRARY.jpg" />
+    <Content Include="programs\Infrastru\NEW HOSTEL-.jpg" />
+    <Content Include="programs\Infrastru\TRAINING CENTRE.jpg" />
+    <Content Include="programs\IP_Banner\ADMIN BUILDIN.jpg" />
+    <Content Include="programs\IP_Banner\apccf.jpg" />
+    <Content Include="programs\IP_Banner\AUDITORIUM.jpg" />
+    <Content Include="programs\IP_Banner\FROS HOSTEL.JPG" />
+    <Content Include="programs\IP_Banner\HERBAL GARDEN.jpg" />
+    <Content Include="programs\IP_Banner\LIBRARY.jpg" />
+    <Content Include="programs\IP_Banner\Organogram.png" />
+    <Content Include="programs\IP_Banner\TRAINING CENTRE--.JPG" />
+    <Content Include="programs\js\bootstrap.min.js" />
+    <Content Include="programs\js\core.min.js" />
+    <Content Include="programs\js\jquery.min.js" />
+    <Content Include="programs\js\main.js" />
+    <Content Include="programs\js\pure-js-lightbox.js" />
+    <Content Include="programs\js\textsizer.js" />
+    <Content Include="programs\logo\lg_tsfa.png" />
+    <Content Include="programs\logo\Logo.png" />
+    <Content Include="programs\logo\Logoabc.png" />
+    <Content Include="programs\logo\Logonew.png" />
+    <Content Include="programs\logo\LogoOnly.png" />
+    <Content Include="programs\logo\logo_logo-dark.png" />
+    <Content Include="programs\Mslides\ADMIN BUILDIN.jpg" />
+    <Content Include="programs\Mslides\AUDITORIUM.jpg" />
+    <Content Include="programs\Mslides\CEFNARM.jpg" />
+    <Content Include="programs\Mslides\DORMITORY.jpg" />
+    <Content Include="programs\Mslides\DSC_2019.JPG" />
+    <Content Include="programs\Mslides\DSC_2489.JPG" />
+    <Content Include="programs\Mslides\DSC_2527.JPG" />
+    <Content Include="programs\Mslides\EXECUTIVE HOSTEL.jpg" />
+    <Content Include="programs\Mslides\Eye View.jpg" />
+    <Content Include="programs\Mslides\FRO Hostel.JPG" />
+    <Content Include="programs\Mslides\FROS HOSTEL--.JPG" />
+    <Content Include="programs\Mslides\HERBAL GARDEN.jpg" />
+    <Content Include="programs\Mslides\LIBRARY-.jpg" />
+    <Content Include="programs\Mslides\Main Building.jpg" />
+    <Content Include="programs\Mslides\New building.jpg" />
+    <Content Include="programs\Mslides\NEW HOSTEL.jpg" />
+    <Content Include="programs\Mslides\WeaponTraining.JPG" />
+    <Content Include="programs\new-flash.gif" />
+    <Content Include="programs\obj\Debug\TSFA.csproj.FileListAbsolute.txt" />
+    <Content Include="programs\obj\Debug\TSFA.dll" />
+    <Content Include="programs\obj\Debug\TSFA.pdb" />
+    <Content Include="programs\PCCFCAMPA.jpeg" />
+    <Content Include="programs\Political\Allola-Indrakaran-Reddy.jpg" />
+    <Content Include="programs\Political\ASanthiKumari.jpeg" />
+    <Content Include="programs\Political\PV Raja Rao.jpg" />
+    <Content Include="programs\Political\shoba.jpg" />
+    <Content Include="programs\Political\Sri-Kalvakuntla-Chandrashekar-Rao_jpg.jpg" />
+    <Content Include="programs\Rajarao.jpeg" />
+    <Content Include="programs\Rajarao.png" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="search\search.css" />
+    <Content Include="search\search.js" />
+    <Content Include="STAFF.aspx" />
+    <Content Include="TrainingCalendar.aspx" />
+    <Content Include="TrainingReg.aspx" />
+    <Content Include="Trainings\20170703_155013.jpg" />
+    <Content Include="Trainings\DSC_5781.JPG" />
+    <Content Include="Trainings\road alignment.JPG" />
+    <Content Include="Training_Materials.aspx" />
+    <Content Include="TraininigRules.aspx" />
+    <Content Include="UserFiles\images\ignfa\campus1.jpg" />
+    <Content Include="UserFiles\images\ignfa\executive-hostel.jpg" />
+    <Content Include="UserFiles\images\ignfa\footer-bg2.jpg" />
+    <Content Include="UserFiles\images\ignfa\image-38231-bharat-jyoti.jpg" />
+    <Content Include="UserFiles\images\ignfa\mandate.jpg" />
+    <Content Include="UserFiles\images\ignfa\new-building.jpg" />
+    <Content Include="UserFiles\images\ignfa\new-hostel.jpg" />
+    <Content Include="UserFiles\images\ignfa\old-hostel.jpg" />
+    <Content Include="UserFiles\images\ignfa\organizational-chart-ignfa.jpg" />
+    <Content Include="UserFiles\images\ignfa\redd-plus-cell.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administratorview.aspx.cs">
+      <DependentUpon>Administratorview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administratorview.aspx.designer.cs">
+      <DependentUpon>Administratorview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminstratiomMemberView.aspx.cs">
+      <DependentUpon>AdminstratiomMemberView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminstratiomMemberView.aspx.designer.cs">
+      <DependentUpon>AdminstratiomMemberView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdministartionMembers.aspx.cs">
+      <DependentUpon>AdministartionMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdministartionMembers.aspx.designer.cs">
+      <DependentUpon>AdministartionMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdministrationTypes.aspx.cs">
+      <DependentUpon>AdministrationTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdministrationTypes.aspx.designer.cs">
+      <DependentUpon>AdministrationTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CategoryType.aspx.cs">
+      <DependentUpon>CategoryType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CategoryType.aspx.designer.cs">
+      <DependentUpon>CategoryType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FacilityMaster.aspx.cs">
+      <DependentUpon>FacilityMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FacilityMaster.aspx.designer.cs">
+      <DependentUpon>FacilityMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LatestNewsMaster.aspx.cs">
+      <DependentUpon>LatestNewsMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LatestNewsMaster.aspx.designer.cs">
+      <DependentUpon>LatestNewsMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MenuPreview.aspx.cs">
+      <DependentUpon>MenuPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MenuPreview.aspx.designer.cs">
+      <DependentUpon>MenuPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MessageMaster.aspx.cs">
+      <DependentUpon>MessageMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MessageMaster.aspx.designer.cs">
+      <DependentUpon>MessageMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PageDetails.aspx.cs">
+      <DependentUpon>PageDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PageDetails.aspx.designer.cs">
+      <DependentUpon>PageDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD_FRO.aspx.cs">
+      <DependentUpon>AD_FRO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AD_FRO.aspx.designer.cs">
+      <DependentUpon>AD_FRO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Anjaneyulu.aspx.cs">
+      <DependentUpon>Anjaneyulu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Anjaneyulu.aspx.designer.cs">
+      <DependentUpon>Anjaneyulu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Books_Journals.aspx.cs">
+      <DependentUpon>Books_Journals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Books_Journals.aspx.designer.cs">
+      <DependentUpon>Books_Journals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CAFE.aspx.cs">
+      <DependentUpon>CAFE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CAFE.aspx.designer.cs">
+      <DependentUpon>CAFE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CEFNARM.aspx.cs">
+      <DependentUpon>CEFNARM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CEFNARM.aspx.designer.cs">
+      <DependentUpon>CEFNARM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CEFNARM_RATES.aspx.cs">
+      <DependentUpon>CEFNARM_RATES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CEFNARM_RATES.aspx.designer.cs">
+      <DependentUpon>CEFNARM_RATES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Dao\TSFADataAccessUtil.cs.cs" />
+    <Compile Include="ContactMaster.aspx.cs">
+      <DependentUpon>ContactMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactMaster.aspx.designer.cs">
+      <DependentUpon>ContactMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactus.aspx.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactus.aspx.designer.cs">
+      <DependentUpon>Contactus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DDRamaMohan.aspx.cs">
+      <DependentUpon>DDRamaMohan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DDRamaMohan.aspx.designer.cs">
+      <DependentUpon>DDRamaMohan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DDVasantha.aspx.cs">
+      <DependentUpon>DDVasantha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DDVasantha.aspx.designer.cs">
+      <DependentUpon>DDVasantha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Director.aspx.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director.aspx.designer.cs">
+      <DependentUpon>Director.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorGeneral_CEFNARM.aspx.cs">
+      <DependentUpon>DirectorGeneral_CEFNARM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DirectorGeneral_CEFNARM.aspx.designer.cs">
+      <DependentUpon>DirectorGeneral_CEFNARM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DyDirector.aspx.cs">
+      <DependentUpon>DyDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DyDirector.aspx.designer.cs">
+      <DependentUpon>DyDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventImagesView.aspx.cs">
+      <DependentUpon>EventImagesView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventImagesView.aspx.designer.cs">
+      <DependentUpon>EventImagesView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FacilityView.aspx.cs">
+      <DependentUpon>FacilityView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacilityView.aspx.designer.cs">
+      <DependentUpon>FacilityView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facilityviews.aspx.cs">
+      <DependentUpon>Facilityviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facilityviews.aspx.designer.cs">
+      <DependentUpon>Facilityviews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.aspx.cs">
+      <DependentUpon>Faculty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Faculty.aspx.designer.cs">
+      <DependentUpon>Faculty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FBOT.aspx.cs">
+      <DependentUpon>FBOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FBOT.aspx.designer.cs">
+      <DependentUpon>FBOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FROGOI.aspx.cs">
+      <DependentUpon>FROGOI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FROGOI.aspx.designer.cs">
+      <DependentUpon>FROGOI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSO.aspx.cs">
+      <DependentUpon>FSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FSO.aspx.designer.cs">
+      <DependentUpon>FSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FSOP.aspx.cs">
+      <DependentUpon>FSOP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FSOP.aspx.designer.cs">
+      <DependentUpon>FSOP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InductionTraining.aspx.cs">
+      <DependentUpon>InductionTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InductionTraining.aspx.designer.cs">
+      <DependentUpon>InductionTraining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LatestNews.aspx.cs">
+      <DependentUpon>LatestNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LatestNews.aspx.designer.cs">
+      <DependentUpon>LatestNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MainMenuMaster.aspx.cs">
+      <DependentUpon>MainMenuMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MainMenuMaster.aspx.designer.cs">
+      <DependentUpon>MainMenuMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MarksEntry.aspx.cs">
+      <DependentUpon>MarksEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MarksEntry.aspx.designer.cs">
+      <DependentUpon>MarksEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menuview.aspx.cs">
+      <DependentUpon>Menuview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menuview.aspx.designer.cs">
+      <DependentUpon>Menuview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Orders_Circulars.aspx.cs">
+      <DependentUpon>Orders_Circulars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orders_Circulars.aspx.designer.cs">
+      <DependentUpon>Orders_Circulars.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Organogram.aspx.cs">
+      <DependentUpon>Organogram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Organogram.aspx.designer.cs">
+      <DependentUpon>Organogram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="programs\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="programs\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="programs\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STAFF.aspx.cs">
+      <DependentUpon>STAFF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STAFF.aspx.designer.cs">
+      <DependentUpon>STAFF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingCalendar.aspx.cs">
+      <DependentUpon>TrainingCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingCalendar.aspx.designer.cs">
+      <DependentUpon>TrainingCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingReg.aspx.cs">
+      <DependentUpon>TrainingReg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TrainingReg.aspx.designer.cs">
+      <DependentUpon>TrainingReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training_Materials.aspx.cs">
+      <DependentUpon>Training_Materials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training_Materials.aspx.designer.cs">
+      <DependentUpon>Training_Materials.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TraininigRules.aspx.cs">
+      <DependentUpon>TraininigRules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TraininigRules.aspx.designer.cs">
+      <DependentUpon>TraininigRules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TSFA.Master.cs">
+      <DependentUpon>TSFA.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TSFA.Master.designer.cs">
+      <DependentUpon>TSFA.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TSFABAL.cs" />
+    <Compile Include="TSFABO.cs" />
+    <Compile Include="TSFADAL.cs" />
+    <Compile Include="Whoswho.aspx.cs">
+      <DependentUpon>Whoswho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Whoswho.aspx.designer.cs">
+      <DependentUpon>Whoswho.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="programs\Common\Dao\" />
+    <Folder Include="programs\css\plugins\" />
+    <Folder Include="programs\Documents\Books_Journals\" />
+    <Folder Include="programs\Documents\FBo_Trainee List\" />
+    <Folder Include="programs\Documents\FRO_Trainee List\" />
+    <Folder Include="programs\Documents\FSOP_Trainee List\" />
+    <Folder Include="programs\Documents\FSO_Trainee List\" />
+    <Folder Include="programs\Documents\Training Master Data\" />
+    <Folder Include="programs\Documents\Training Materials\" />
+    <Folder Include="programs\Documents\Training Rules\" />
+    <Folder Include="programs\Documents\TSFA_Orders_Circulars\" />
+    <Folder Include="programs\img\content\" />
+    <Folder Include="programs\img\logos\" />
+    <Folder Include="programs\js\mailform\" />
+    <Folder Include="programs\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52015</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52015/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
